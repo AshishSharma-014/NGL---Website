@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>NGL - New Goodluck Furniture</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/Resources/logo.png">
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#catlog">Catlog</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#contact_us">Contact us</a></li>
+        </ul>
+    </nav>
+    <section class="hero" id="home">
+        <img src="/Resources/pic1.jpg" class="hero-img">
+        <div class="text">
+            <h1>We Helps You Make Modern Interior</h1>
+            <p>We curate modern, comfortable interiors designed to reflect your unique narrative. By blending smart
+                spatial planning with elegant aesthetics, we transform your space into a harmonious balance of beauty
+                and functionality.
+            </p>
+            <button>Read More</button>
+        </div>
+    </section>
+    <section class="hero2">
+        <img src="/Resources/Pic2.jpg" class="hero2-img">
+        <div class="txt">
+            <h1>Furniture And Interior Design Collection</h1>
+            <p>Let us create a home so delightful that your guests can't help but say, 'Wow, your place is absolutely
+                lovely. We blend cozy textures with modern elegance to ensure every corner of your space feels
+                welcoming, creating a warm atmosphere that friends and family will cherish for years to come.</p>
+        </div>
+    </section>
+    <section class="catlog" id="catlog">
+        <div class="furniture">
+            <h2 class="hding">Furniture</h2>
+            <div class="container">
+                <a href="/Code/products.html?category=bed" class="box one">
+                    <img src="/Resources/bed.jpg" class="bed-img">
+                    <div class="desc">
+                        <h2>Bed</h2>
+                        <p>A blend of style and comfort. The ideal centerpiece for a restful retreat.</p>
+                    </div>
+                </a>
+                <a href="products.html?category=sofa" class="box two">
+                    <img src="/Resources/sofa.jpg" class="sofa-img">
+                    <div class="desc">
+                        <h2>Sofa</h2>
+                        <p>Modern design meets everyday comfort. The perfect spot to gather and unwind.</p>
+                    </div>
+                </a>
+                <a href="products.html?category=dressing" class="box three">
+                    <img src="/Resources/dressing.jpg" class="dressing-img">
+                    <div class="desc">
+                        <h2>Dressing Table</h2>
+                        <p>A blend of elegance and utility. The perfect spot to get ready in style.</p>
+                    </div>
+                </a>
+                <a href="products.html?category=dining" class="box four">
+                    <img src="/Resources/Dining.jpg" class="dining-img">
+                    <div class="desc">
+                        <h2>Dining Table</h2>
+                        <p>Where style meets gathering. The perfect setting for hosting and dining.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="interior">
+            <h2 class="hding">Interior</h2>
+            <div class="container">
+                <a href="products.html?category=drawing_room" class="box one">
+                    <img src="/Resources/drawing room.jpg" class="drawing-img">
+                    <div class="desc">
+                        <h2>Drawing Room</h2>
+                        <p>Where style meets hospitality. The ideal space to impress every guest.</p>
+                    </div>
+                </a>
+                <a href="products.html?category=wardrobe" class="box two">
+                    <img src="/Resources/wardrobe.jpg" class="Wardrobe-img">
+                    <div class="desc">
+                        <h2>Wardrobe</h2>
+                        <p>Smart storage meets modern design. The ideal home for your clothing collection.</p>
+                    </div>
+                </a>
+                <a href="products.html?category=living_room" class="box three">
+                    <img src="/Resources/Living room.jpg" class="living-img">
+                    <div class="desc">
+                        <h2>Living Room</h2>
+                        <p>A blend of comfort and style. The perfect hub for family life.</p>
+                    </div>
+                </a>
+                <a href="products.html?category=kitchen" class="box four">
+                    <img src="/Resources/Kitchen.jpg" class="kitchen-img">
+                    <div class="desc">
+                        <h2>Kitchen</h2>
+                        <p>Modern design meets practicality. The perfect setting for cooking in style.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <img class="im" src="/Resources/about.jpg">
+        <div class="abtus">
+            <h2>ABOUT US</h2>
+            <h3>Creating beautiful spaces with design and furniture.</h3>
+            <p>At New Goodluck Furniture, we believe your home should tell your story. We blend modern aesthetics with
+                everyday functionality to create spaces that inspire. From stylish sofas to durable dining sets, our
+                mission is to provide premium quality furniture that turns your house into a dream home.</p>
+        </div>
+    </section>
+    <section class="contact" id="contact_us">
+        <h2>CONTACT US</h2>
+        <div class="contact-container">
+            <div class="contact-box">
+                <h3>Send us a message</h3>
+                <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+                <form action="https://api.web3forms.com/submit" method="POST" target="hidden_iframe"
+                    onsubmit="alert('Message sent successfully!');">
+
+                    <input type="hidden" name="access_key" value="d2c04812-35f9-4890-b914-acfee8648f8b">
+
+                    <input type="hidden" name="subject" value="New Inquiry from Goodluck Furniture">
+
+                    <label for="name">Your Name: </label><br>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required /><br>
+
+                    <label for="email">Email: </label><br>
+                    <input type="email" id="email" name="email" placeholder="Email" required /><br>
+
+                    <label for="phone">Phone no. : </label><br>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone" required /><br>
+
+                    <label for="sub">Subject: </label><br>
+                    <input type="text" id="sub" name="sub" placeholder="Subject" required /><br>
+
+                    <label for="msg">Message: </label><br>
+                    <textarea name="message" placeholder="Message" required></textarea><br>
+
+                    <button type="submit">Send Message</button>
+                </form>
+
+            </div>
+            <div class="info">
+                <div class="info-text">
+                    <h3>Address</h3>
+                    <p>Rani Road Bhuda, Near Barmasia Overbridge, Dhanbad, Jharkhand, 826001</p>
+                    <h3>Phone</h3>
+                    <p>+91 0000000000</p>
+                    <p>+91 0000000000</p>
+                    <p>+91 0000000000</p>
+                    <h3>Email</h3>
+                    <p>nglfurnitures@gmail.com</p>
+                    <p>nglfurnitures@gmail.com</p>
+                    <h3>Timing</h3>
+                    <p>MON - FRI : 10:00 A.M. to 06:00 P.M.</p>
+                    <p>SAT & SUN : 10:00 A.M. to 05:00 P.M.</p>
+                    <h3>Follow us on:</h3>
+                    <div class="icons">
+                        <a href="#" target="_blank"><i class="fa-brands fa-whatsapp fa-2xl"></i></a>
+                        <a href="https://www.instagram.com/ngl_furniture?igsh=MXR1dTk3dWI3cjltdQ%3D%3D"
+                            target="_blank"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-youtube fa-2xl"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61587291676883" target="_blank"><i class="fa-brands fa-facebook fa-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footerr">
+        <div class="footer-grid">
+            <div class="footheading">
+                <h3>Contact us</h3>
+                <p><b>Shop Address:</b> Rani Road Bhuda, Near Barmasia Overbridge, Dhanbad, Jharkhand, 826001 <br></p>
+                <p class="fh"><a href="#">Mob: +91 0000000000</a><br><a href="#"> Mob: +91 0000000000</a><br><a
+                        href="#"> Mob: +91 0000000000</a></p>
+            </div>
+            <div class="footheading">
+                <h3>Quick Links</h3>
+                <p class="fh"><a href="#home"> Home</a><br><a href="#catlog"> Catalog</a><br><a href="#about">
+                        About us</a><br><a href="#contact_us"> Contact us </a> </p>
+            </div>
+            <div class="footheading">
+                <h3>Our Services</h3>
+                <p class="fh"><a href="#">Custom Furniture</a><br><a href="#">Interior Design</a><br><a href="#">Modular
+                        Kitchen</a><br><a href="#">Turnkey Projects</a><br><a href="#">Renovation Services</a></p>
+            </div>
+            <div class="footheading">
+                <h3>Follow Us</h3>
+                <p class="fh"><a href="https://www.instagram.com/ngl_furniture?igsh=MXR1dTk3dWI3cjltdQ%3D%3D"
+                        target="_blank">Instagram</a><br><a href="https://www.facebook.com/profile.php?id=61587291676883" target="_blank">Facebook</a><br><a href="#">Whatsapp</a><br><a
+                        href="#">Youtube</a></p>
+            </div>
+        </div>
+        <p class="copy">© 2026 New Goodluck Furniture | All Rights Reserved</p>
+    </footer>
+</body>
+<script src="https://kit.fontawesome.com/cc5bde920c.js" crossorigin="anonymous"></script>
+
+</html>

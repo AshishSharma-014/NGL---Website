@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection - New Goodluck Furniture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="product.css">
+    <script src="https://kit.fontawesome.com/cc5bde920c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <a href="index.html"><img src="/Resources/logo.png" alt="NGL Logo"></a>
+        </div>
+
+        <div class="filter-section">
+            <h3>Sort By</h3>
+            <select id="sort-select" onchange="sortProducts()">
+                <option value="default">Recommended</option>
+                <option value="low-high">Price: Low to High</option>
+                <option value="high-low">Price: High to Low</option>
+            </select>
+        </div>
+
+        <div class="filter-section">
+            <h3>Price Range (₹)</h3>
+            <input type="number" id="min-price" placeholder="Min Price" onkeyup="filterProducts()">
+            <input type="number" id="max-price" placeholder="Max Price" onkeyup="filterProducts()">
+        </div>
+
+        <div class="filter-section" id="size-filter-section" style="display:none;">
+            <h3>Size</h3>
+            <div class="checkbox-group">
+                <label><input type="checkbox" value="king" onchange="filterProducts()"> King Size</label>
+                <label><input type="checkbox" value="queen" onchange="filterProducts()"> Queen Size</label>
+                <label><input type="checkbox" value="single" onchange="filterProducts()"> Single</label>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-btn">← Back to Main Menu</a>
+    </aside>
+
+    <main class="main-content">
+        <header class="page-header">
+            <h1 id="category-title">All Products</h1>
+            <span style="color: #777; font-size: 0.9rem;">New Goodluck Furniture</span>
+        </header>
+
+        <div class="products-grid" id="product-grid">
+
+            <div class="prod-card" data-category="bed" data-price="25000" data-size="king"
+                data-desc="This Royal Teak Bed is crafted from 100% genuine Sagwan wood. It features hydraulic storage and a premium cushioned headboard."
+                data-specs="Material: Teak Wood, Polish: Melamine Matte, Storage: Hydraulic, Warranty: 5 Years" data-img1="/Resources/bed.jpg" data-img2="/Resources/bed.jpg"
+                data-img3="/Resources/bed.jpg">
+
+                <img src="/Resources/bed.jpg">
+                <div class="prod-info">
+                    <h3>Royal Teak Bed</h3>
+                    <p>King Size • Solid Wood</p>
+                    <span class="price">₹ 25,000</span>
+                    <button class="prod-btn" onclick="openModal(this)">View Details</button>
+                </div>
+            </div>
+
+            <div class="prod-card" data-category="bed" data-price="18500" data-size="queen"
+                data-desc="A minimalist modern bed designed for compact urban homes. High durability ply with premium laminate finish."
+                data-specs="Material: Engineering Wood, Finish: Laminate, Storage: Box, Warranty: 2 Years"
+                data-img1="/Resources/bed.jpg" data-img2="/Resources/bed.jpg" data-img3="/Resources/bed.jpg">
+
+                <img src="/Resources/bed.jpg">
+                <div class="prod-info">
+                    <h3>Modern Low Bed</h3>
+                    <p>Queen Size • Minimalist</p>
+                    <span class="price">₹ 18,500</span>
+                    <button class="prod-btn" onclick="openModal(this)">View Details</button>
+                </div>
+            </div>
+
+            <div class="prod-card" data-category="sofa" data-price="35000" data-size="5 Seater"
+                data-desc="Luxury L-Shaped sofa with high density foam and premium velvet fabric. Perfect for modern living rooms."
+                data-specs="Fabric: Velvet, Foam: 40 Density, Frame: Neem Wood, Warranty: 3 Years"
+                data-img1="/Resources/sofa.jpg" data-img2="/Resources/sofa.jpg" data-img3="/Resources/sofa.jpg">
+
+                <img src="/Resources/sofa.jpg">
+                <div class="prod-info">
+                    <h3>L-Shape Luxury Sofa</h3>
+                    <p>5 Seater • Velvet Finish</p>
+                    <span class="price">₹ 35,000</span>
+                    <button class="prod-btn" onclick="openModal(this)">View Details</button>
+                </div>
+            </div>
+
+            <div class="prod-card" data-category="dressing" data-price="12000" data-size="Standard"
+                data-desc="Classic dressing table with ample storage drawers and a full length mirror."
+                data-specs="Material: Ply/Laminate, Mirror: Saint Gobain, Drawers: 4, Warranty: 1 Year"
+                data-img1="/Resources/dressing.jpg" data-img2="/Resources/dressing.jpg"
+                data-img3="/Resources/dressing.jpg">
+
+                <img src="/Resources/dressing.jpg">
+                <div class="prod-info">
+                    <h3>Classic Dressing Table</h3>
+                    <p>With Full Mirror</p>
+                    <span class="price">₹ 12,000</span>
+                    <button class="prod-btn" onclick="openModal(this)">View Details</button>
+                </div>
+            </div>
+
+            <div class="prod-card" data-category="dining" data-price="28000" data-size="6 Seater"
+                data-desc="Elegant 6 seater dining table with a sturdy marble top and solid wood legs."
+                data-specs="Top: Marble, Legs: Teak Wood, Chairs: 6 Cushioned, Warranty: 5 Years"
+                data-img1="/Resources/Dining.jpg" data-img2="/Resources/Dining.jpg" data-img3="/Resources/Dining.jpg">
+
+                <img src="/Resources/Dining.jpg">
+                <div class="prod-info">
+                    <h3>Marble Top Dining</h3>
+                    <p>6 Seater • Teak Legs</p>
+                    <span class="price">₹ 28,000</span>
+                    <button class="prod-btn" onclick="openModal(this)">View Details</button>
+                </div>
+            </div>
+
+            <div class="prod-card" data-category="wardrobe" data-price="85000" data-size="8x9 Ft"
+                data-desc="Modern sliding wardrobe with lacquered glass finish and soft close channels."
+                data-specs="Material: BWR Ply, Finish: Glass, Hardware: Hettich, Warranty: 10 Years"
+                data-img1="/Resources/wardrobe.jpg" data-img2="/Resources/wardrobe.jpg"
+                data-img3="/Resources/wardrobe.jpg">
+
+                <img src="/Resources/wardrobe.jpg">
+                <div class="prod-info">
+                    <h3>Glass Sliding Wardrobe</h3>
+                    <p>8ft x 9ft • Modern Glass</p>
+                    <span class="price">₹ 85,000</span>
+                    <button class="prod-btn" onclick="openModal(this)">View Details</button>
+                </div>
+            </div>
+
+            <div class="prod-card" data-category="kitchen" data-price="150000" data-size="Custom"
+                data-desc="Fully modular kitchen with acrylic finish shutters and stainless steel baskets."
+                data-specs="Finish: Acrylic, Countertop: Quartz, Accessories: SS 304, Warranty: 7 Years"
+                data-img1="/Resources/Kitchen.jpg" data-img2="/Resources/Kitchen.jpg"
+                data-img3="/Resources/Kitchen.jpg">
+
+                <img src="/Resources/Kitchen.jpg">
+                <div class="prod-info">
+                    <h3>Modular Kitchen</h3>
+                    <p>Acrylic Finish • High Gloss</p>
+                    <span class="price">₹ 1,50,000</span>
+                    <button class="prod-btn" onclick="openModal(this)">View Details</button>
+                </div>
+            </div>
+
+            <div class="prod-card" data-category="drawing_room" data-price="90000" data-size="Full Room"
+                data-desc="Complete interior solution for drawing rooms including wall paneling and false ceiling."
+                data-specs="Theme: Luxury, Lighting: Profile LED, Paneling: Louvers, Warranty: Service Based"
+                data-img1="/Resources/drawing room.jpg" data-img2="/Resources/drawing room.jpg"
+                data-img3="/Resources/drawing room.jpg">
+
+                <img src="/Resources/drawing room.jpg">
+                <div class="prod-info">
+                    <h3>Luxury Drawing Set</h3>
+                    <p>Complete Interior Theme</p>
+                    <span class="price">₹ 90,000</span>
+                    <button class="prod-btn" onclick="openModal(this)">View Details</button>
+                </div>
+            </div>
+
+            <div class="prod-card" data-category="living_room" data-price="45000" data-size="Wall Unit"
+                data-desc="Modern floating TV unit with ambient backlighting and ample storage."
+                data-specs="Material: HDHMR, Finish: PU Paint, Lights: Warm White, Warranty: 3 Years"
+                data-img1="/Resources/Living room.jpg" data-img2="/Resources/Living room.jpg"
+                data-img3="/Resources/Living room.jpg">
+
+                <img src="/Resources/Living room.jpg">
+                <div class="prod-info">
+                    <h3>Modern TV Unit</h3>
+                    <p>Wall Mounted • LED Lights</p>
+                    <span class="price">₹ 45,000</span>
+                    <button class="prod-btn" onclick="openModal(this)">View Details</button>
+                </div>
+            </div>
+
+            <h2 id="no-result">No products found matching your filters.</h2>
+
+        </div>
+    </main>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <div class="main-img-wrapper">
+                        <img id="modal-main-img" src="" alt="Main Product Image">
+                    </div>
+
+                    <div class="thumbnail-container">
+                        <img id="thumb-1" class="thumb" src="" onclick="swapImage(this)">
+                        <img id="thumb-2" class="thumb" src="" onclick="swapImage(this)">
+                        <img id="thumb-3" class="thumb" src="" onclick="swapImage(this)">
+                    </div>
+                </div>
+
+                <div class="modal-info">
+                    <button class="modal-back-btn" onclick="closeModal()">
+                        <i class="fa-solid fa-arrow-left"></i> Back
+                    </button>
+
+                    <p id="modal-cat" class="modal-cat">CATEGORY</p>
+                    <h2 id="modal-title">Product Title</h2>
+
+                    <div class="price-size-row">
+                        <h3 id="modal-price">₹ 00,000</h3>
+                        <span id="modal-size-tag" class="size-badge">Size: King</span>
+                    </div>
+
+                    <hr style="border-color: #444; width:100%; margin: 15px 0;">
+
+                    <p id="modal-desc">Description text goes here...</p>
+
+                    <div class="modal-specs">
+                        <h4 style="color:#D4AE37; margin-bottom:10px;">Specifications:</h4>
+                        <ul id="modal-specs-list"></ul>
+                    </div>
+
+                    <a href="https://wa.me/919113491032" target="_blank" class="buy-btn">
+                        <i class="fa-brands fa-whatsapp fa-lg"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* --- MASTER SCRIPT FOR PRODUCTS.HTML --- */
+
+        // 1. GLOBAL VARIABLES
+        const params = new URLSearchParams(window.location.search);
+        const activeCategory = params.get('category'); // e.g., "bed", "sofa"
+        const grid = document.getElementById('product-grid');
+        const title = document.getElementById('category-title');
+        const modal = document.getElementById("product-modal");
+
+        // --- 2. LOAD ADMIN PRODUCTS (Prevents Duplicates) ---
+        function loadAdminProducts() {
+            // Step A: Remove any previously loaded admin products to prevent duplicates
+            const existingDynamic = document.querySelectorAll('.dynamic-entry');
+            existingDynamic.forEach(el => el.remove());
+
+            // Step B: Get Data from LocalStorage
+            const storedProducts = JSON.parse(localStorage.getItem('ngl_products') || "[]");
+
+            // Step C: Create HTML for each product
+            storedProducts.forEach(prod => {
+                const card = document.createElement('div');
+                // Add 'dynamic-entry' class so we can identify/remove it later if needed
+                card.className = 'prod-card dynamic-entry';
+
+                // Set Data Attributes for Filtering
+                card.setAttribute('data-category', prod.category);
+                card.setAttribute('data-price', prod.price);
+                card.setAttribute('data-size', prod.size.toLowerCase());
+                card.setAttribute('data-desc', prod.desc);
+                card.setAttribute('data-specs', prod.specs);
+                card.setAttribute('data-img1', prod.img1);
+                card.setAttribute('data-img2', prod.img2);
+                card.setAttribute('data-img3', prod.img3);
+
+                // Fill HTML
+                card.innerHTML = `
+                <img src="${prod.imgMain}" onerror="this.src='https://via.placeholder.com/300?text=Image+Not+Found'">
+                <div class="prod-info">
+                    <h3>${prod.name}</h3>
+                    <p>Size: ${prod.size}</p>
+                    <span class="price">₹ ${Number(prod.price).toLocaleString('en-IN')}</span>
+                    <button class="prod-btn" onclick="openModal(this)">View Details</button>
+                </div>
+            `;
+
+                grid.appendChild(card);
+            });
+        }
+
+        // --- 3. INITIALIZE PAGE (Run logic) ---
+        // First, load the admin products
+        loadAdminProducts();
+
+        // Second, Select ALL cards (Static + New Dynamic ones)
+        const allCards = document.querySelectorAll('.prod-card');
+
+        // Third, Apply Category Filter (URL based)
+        if (activeCategory) {
+            title.innerText = activeCategory.replace('_', ' ').toUpperCase() + " COLLECTION";
+
+            // Show Size Filter only for Bed
+            if (activeCategory === 'bed') {
+                document.getElementById('size-filter-section').style.display = 'block';
+            }
+
+            allCards.forEach(card => {
+                if (card.getAttribute('data-category') === activeCategory) {
+                    card.style.display = 'block';
+                    card.classList.add('active-item'); // Mark as active
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('active-item');
+                }
+            });
+        } else {
+            // If no category (User clicked "Catalog"), show everything
+            title.innerText = "ALL PRODUCTS";
+            allCards.forEach(card => {
+                card.style.display = 'block';
+                card.classList.add('active-item');
+            });
+        }
+
+
+        // --- 4. SIDEBAR FILTER FUNCTIONS ---
+
+        function filterProducts() {
+            const minPrice = document.getElementById('min-price').value;
+            const maxPrice = document.getElementById('max-price').value;
+            const checkedSizes = Array.from(document.querySelectorAll('.checkbox-group input:checked')).map(cb => cb.value);
+
+            // Only filter items that belong to the current category (active-items)
+            const visibleCards = document.querySelectorAll('.active-item');
+            let hasResult = false;
+
+            visibleCards.forEach(card => {
+                const price = Number(card.getAttribute('data-price'));
+                const size = card.getAttribute('data-size');
+
+                let show = true;
+
+                // Price Check
+                if (minPrice && price < minPrice) show = false;
+                if (maxPrice && price > maxPrice) show = false;
+
+                // Size Check
+                if (checkedSizes.length > 0) {
+                    if (!size || !checkedSizes.includes(size)) {
+                        show = false;
+                    }
+                }
+
+                // Apply
+                if (show) {
+                    card.style.display = 'block';
+                    hasResult = true;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('no-result').style.display = hasResult ? 'none' : 'block';
+        }
+
+        function sortProducts() {
+            const sortValue = document.getElementById('sort-select').value;
+            let visibleCards = Array.from(document.querySelectorAll('.active-item'));
+
+            if (sortValue === 'low-high') {
+                visibleCards.sort((a, b) => Number(a.getAttribute('data-price')) - Number(b.getAttribute('data-price')));
+            } else if (sortValue === 'high-low') {
+                visibleCards.sort((a, b) => Number(b.getAttribute('data-price')) - Number(a.getAttribute('data-price')));
+            }
+
+            // Re-arrange DOM
+            visibleCards.forEach(card => grid.appendChild(card));
+        }
+
+
+        // --- 5. MODAL FUNCTIONS ---
+
+        function openModal(button) {
+            const card = button.closest('.prod-card');
+
+            // Retrieve Data
+            const mainImgSrc = card.querySelector('img').src;
+            const title = card.querySelector('h3').innerText;
+            const price = card.querySelector('.price').innerText;
+            const category = card.getAttribute('data-category');
+            const size = card.getAttribute('data-size') || "Standard";
+            const desc = card.getAttribute('data-desc') || "No description available.";
+            const specsRaw = card.getAttribute('data-specs') || "";
+
+            const img1 = card.getAttribute('data-img1') || mainImgSrc;
+            const img2 = card.getAttribute('data-img2') || mainImgSrc;
+            const img3 = card.getAttribute('data-img3') || mainImgSrc;
+
+            // Fill Modal Elements
+            document.getElementById("modal-main-img").src = mainImgSrc;
+            document.getElementById("thumb-1").src = img1;
+            document.getElementById("thumb-2").src = img2;
+            document.getElementById("thumb-3").src = img3;
+
+            document.getElementById("modal-title").innerText = title;
+            document.getElementById("modal-price").innerText = price;
+            document.getElementById("modal-size-tag").innerText = "Size: " + size.charAt(0).toUpperCase() + size.slice(1);
+            document.getElementById("modal-cat").innerText = category.toUpperCase();
+            document.getElementById("modal-desc").innerText = desc;
+
+            // Fill Specifications List
+            const specsList = document.getElementById("modal-specs-list");
+            specsList.innerHTML = "";
+            if (specsRaw) {
+                specsRaw.split(',').forEach(spec => {
+                    let li = document.createElement("li");
+                    li.innerText = spec.trim();
+                    specsList.appendChild(li);
+                });
+            }
+
+            // Show
+            modal.style.display = "flex";
+            setTimeout(() => { modal.classList.add("show"); }, 10);
+        }
+
+        function swapImage(thumbnail) {
+            document.getElementById("modal-main-img").src = thumbnail.src;
+        }
+
+        function closeModal() {
+            modal.classList.remove("show");
+            setTimeout(() => { modal.style.display = "none"; }, 300);
+        }
+
+        // Close on Outside Click
+        window.onclick = function (event) {
+            if (event.target == modal) closeModal();
+        }
+    </script>
+</body>
+
+</html>

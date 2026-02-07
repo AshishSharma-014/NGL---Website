@@ -1,0 +1,303 @@
+/* --- ADMIN THEME (Dark & Gold) --- */
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #1C1C1C;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* --- LOGIN SCREEN --- */
+#login-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background-color: #2A2A2A;
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #D4AE37;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 0 30px rgba(212, 174, 55, 0.2);
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 300;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #151515;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #D4AE37;
+    border: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* --- DASHBOARD LAYOUT --- */
+#admin-panel {
+    display: none;
+    height: 100vh;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2A2A2A;
+    border-right: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    flex-shrink: 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #D4AE37;
+}
+
+.menu-item {
+    padding: 15px;
+    cursor: pointer;
+    color: #aaa;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background-color: #D4AE37;
+    color: black;
+    font-weight: 500;
+}
+
+.logout {
+    margin-top: auto;
+    color: #ff5555;
+    border: 1px solid #ff5555;
+}
+
+.logout:hover {
+    background-color: #ff5555;
+    color: white;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    display: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h2 {
+    margin: 0;
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background-color: #2A2A2A;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.stat-card h3 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #D4AE37;
+}
+
+.stat-card p {
+    margin: 10px 0 0;
+    color: #888;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.form-container {
+    background-color: #2A2A2A;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #333;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #151515;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #D4AE37;
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.col {
+    flex: 1;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #D4AE37;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit-btn.update {
+    background-color: #25D366;
+    color: white;
+}
+
+/* PRODUCT TABLE STYLES */
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-table th,
+.product-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+    vertical-align: middle;
+}
+
+.product-table th {
+    color: #D4AE37;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.product-table tr:hover {
+    background-color: #222;
+}
+
+/* New Image in Table Style */
+.table-thumb {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+    border: 1px solid #555;
+    vertical-align: middle;
+}
+
+.action-btn {
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    margin-right: 5px;
+}
+
+.edit-btn {
+    background-color: #444;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #ff5555;
+    color: white;
+}
+
+#alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+}
