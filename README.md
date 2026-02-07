@@ -35,14 +35,14 @@ A modern, lightweight, and responsive **Digital Catalog Website** designed to he
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/smart-catalog.git](https://github.com/your-username/smart-catalog.git)
+    git clone [https://github.com/AshishSharma-014/NGL---Website.git)
     ```
 2.  **Open the Website:**
     * Open `index.html` to view the Customer Catalog.
 3.  **Access Admin Panel:**
     * Open `admin.html`.
     * **Username:** `admin`
-    * **Password:** `admin123`
+    * **Password:** `admin`
 4.  **Add Products:**
     * Go to "Add Product" in the dashboard, fill in details, and see them appear live on `products.html`.
 
