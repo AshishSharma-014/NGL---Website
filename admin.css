@@ -68,6 +68,7 @@ body {
     display: none;
     height: 100vh;
     display: flex;
+    flex-direction: row-reverse;
 }
 
 .sidebar {
@@ -110,17 +111,23 @@ body {
     background-color: #D4AE37;
     color: black;
     font-weight: 500;
+    width: 100%;
 }
 
 .logout {
     margin-top: auto;
     color: #ff5555;
     border: 1px solid #ff5555;
+    width: 100%;
+}
+.header {
+    text-align: center;
 }
 
 .logout:hover {
     background-color: #ff5555;
     color: white;
+    width: 100%;
 }
 
 .main-content {
@@ -300,4 +307,135 @@ textarea:focus {
     display: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     z-index: 10000;
+}
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .sidebar {
+    width: 29%;
+    background-color: #2A2A2A;
+    border-right: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    flex-shrink: 0;
+    }
+    .logo {
+        margin-top: 1.8rem;
+    }
+    .menu-item {
+        font-size: 1.2rem;
+    }
+}
+
+/* @media (max-width: 425px) {
+    body {
+        flex-direction: column;
+    }
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 225px;
+        z-index: 999;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        box-shadow: -10px 0 10px rgba(255, 255, 255, 0.07);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    
+
+} */
+
+
+/* --- HIDE MOBILE HEADER ON DESKTOP --- */
+.mobile-header {
+    display: none;
+}
+
+/* --- MOBILE RESPONSIVE (Max-width: 425px) --- */
+@media (max-width: 425px) {
+    /* Change body/panel layout to stack vertically */
+    body {
+        overflow-y: auto;
+    }
+    #admin-panel {
+        flex-direction: column;
+        display: none; /* Handled by JS */
+    }
+
+    /* Show Mobile Header */
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background-color: #2A2A2A;
+        border-bottom: 1px solid #333;
+        z-index: 1001;
+    }
+    .mobile-logo {
+        font-size: 1.2rem;
+        color: white;
+        font-weight: bold;
+    }
+    .mobile-logo span { color: #D4AE37; }
+    .mobile-toggle {
+        font-size: 1.5rem;
+        color: #D4AE37;
+        cursor: pointer;
+    }
+
+    /* Turn Sidebar into a slide-in drawer */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Hidden off-screen to the left */
+        height: 100vh;
+        width: 250px;
+        background-color: #1c1c1c34;
+        backdrop-filter: blur(10px);
+        z-index: 2000;
+        transition: 0.3s ease-in-out;
+        box-shadow: 2px 0 15px rgba(0,0,0,0.8);
+    }
+    
+    /* When 'open' class is added via JS, it slides in */
+    .sidebar.open {
+        left: 0; 
+    }
+
+    /* Adjust Main Content padding */
+    .main-content {
+        padding: 20px 10px;
+    }
+
+    /* Stack the Stats Grid */
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Stack Form Rows */
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Make the table scrollable horizontally so it doesn't break the page */
+    .product-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Shrink Login Box */
+    .login-box {
+        width: 90%;
+        padding: 20px;
+    }
 }

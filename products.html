@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,14 @@
 </head>
 
 <body>
-
+    <div class="mobile-header">
+        <div class="mobile-logo">
+            <a href="index.html"><img src="/Resources/logo.png" alt="NGL Logo" style="width: 50px;"></a>
+        </div>
+        <i class="fa-solid fa-bars mobile-toggle" onclick="toggleSidebar()"></i>
+    </div>
     <aside class="sidebar">
+        <i id="close-button" class="fa-solid fa-xmark close-btn" onclick="toggleSidebar()"></i>
         <div class="sidebar-logo">
             <a href="index.html"><img src="/Resources/logo.png" alt="NGL Logo"></a>
         </div>
@@ -46,15 +53,15 @@
     <main class="main-content">
         <header class="page-header">
             <h1 id="category-title">All Products</h1>
-            <span style="color: #777; font-size: 0.9rem;">New Goodluck Furniture</span>
+            <!-- <span style="color: #777; font-size: 0.9rem;">New Goodluck Furniture</span> -->
         </header>
 
         <div class="products-grid" id="product-grid">
 
             <div class="prod-card" data-category="bed" data-price="25000" data-size="king"
                 data-desc="This Royal Teak Bed is crafted from 100% genuine Sagwan wood. It features hydraulic storage and a premium cushioned headboard."
-                data-specs="Material: Teak Wood, Polish: Melamine Matte, Storage: Hydraulic, Warranty: 5 Years" data-img1="/Resources/bed.jpg" data-img2="/Resources/bed.jpg"
-                data-img3="/Resources/bed.jpg">
+                data-specs="Material: Teak Wood, Polish: Melamine Matte, Storage: Hydraulic, Warranty: 5 Years"
+                data-img1="/Resources/bed.jpg" data-img2="/Resources/bed.jpg" data-img3="/Resources/bed.jpg">
 
                 <img src="/Resources/bed.jpg">
                 <div class="prod-info">
@@ -431,6 +438,21 @@
         window.onclick = function (event) {
             if (event.target == modal) closeModal();
         }
+        // --- MOBILE HAMBURGER TOGGLE ---
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        // Close sidebar if user clicks a filter (optional but good UX)
+        const filterInputs = document.querySelectorAll('.sidebar input, .sidebar select');
+        filterInputs.forEach(input => {
+            input.addEventListener('change', () => {
+                if(window.innerWidth <= 425) {
+                    document.querySelector('.sidebar').classList.remove('open');
+                }
+            });
+        });
     </script>
 </body>
 

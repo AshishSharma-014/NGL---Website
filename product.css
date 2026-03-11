@@ -2,6 +2,9 @@
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
+.mobile-header {
+    display: none; 
+}
 
 body {
     background-color: #1C1C1C;
@@ -418,58 +421,220 @@ input[type="number"]::placeholder {
     transform: scale(1.02);
 }
 
+
 /* Mobile Responsive */
+/* --- TABLET & MOBILE RESPONSIVE (Max-width: 768px) --- */
 @media (max-width: 768px) {
+    /* 1. Flip the layout to put the sidebar on the right */
     body {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row-reverse; 
+        align-items: flex-start;
     }
 
+    /* 2. Style the Sidebar for the right side */
     .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        border-right: none;
-        border-bottom: 1px solid #333;
+        width: 230px; /* Slightly smaller width for smaller screens */
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow-y: auto;
+        border-left: 1px solid #333; /* Add border to the left side */
+        border-right: none; /* Remove desktop right border */
+        background-color: #1C1C1C;
     }
 
+    /* 3. Main Content takes the remaining left space */
     .main-content {
-        padding: 20px;
+        flex: 1; /* Fills the rest of the screen */
+        padding: 15px;
+        width: calc(100% - 230px); /* Prevents overlapping */
     }
 
-    /* Modal Mobile */
+    /* 4. Adjust the product grid so cards don't get squished */
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+
+    /* Make the page header slightly smaller to fit */
+    .page-header h1 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        padding: 15px;
+        margin-top: 5px;
+    }
+    .page-header {
+        padding-bottom: 15px;
+    }
+    /* Inside @media (max-width: 768px) */
+    
+    .back-btn {
+        margin-top: 40px; /* Safe, dynamic spacing */
+    }
+
+    /* --- RESPONSIVE MODAL FOR TABLET & MOBILE --- */
     .modal-content {
         width: 95%;
-        margin: 10px;
-        height: 90vh;
-        overflow-y: scroll;
-        display: flex;
-        flex-direction: column;
+        max-height: 90vh; /* Prevents it from being taller than the screen */
+        overflow-y: auto; /* Makes the inside of the popup scrollable! */
     }
 
     .modal-body {
-        flex-direction: column;
+        flex-direction: column; /* Stacks image on top, text on bottom */
     }
 
     .modal-gallery {
         border-right: none;
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid #333; /* Moves border to the bottom */
         padding: 15px;
     }
 
     .main-img-wrapper img {
-        height: 250px;
+        height: 250px; /* Shrinks the giant image so text fits on screen */
+    }
+}
+
+/* --- EXTRA MOBILE TWEAK (Max-width: 425px) --- */
+/* On very small phones, side-by-side becomes too tight. 
+   This stacks them, putting the sidebar/filters at the top */
+/* --- MOBILE RESPONSIVE (Max-width: 425px) --- */
+@media (max-width: 425px) {
+    /* 1. Reset Body Layout */
+    body {
+        display: block; /* Disables the side-by-side flex layout from the 768px query */
     }
 
-    .thumb {
-        width: 60px;
-        height: 50px;
+    /* 2. Show Mobile Header (Logo left, Hamburger right) */
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #1C1C1C;
+        border-bottom: 1px solid #333;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
 
+    .mobile-toggle {
+        font-size: 1.5rem;
+        color: #D4AE37;
+        cursor: pointer;
+    }
+
+    /* 3. Turn Sidebar into a Slide-in Drawer from the Right */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hides it off-screen to the right */
+        left: auto;
+        width: 250px;
+        height: 100vh;
+        z-index: 2000;
+        transition: right 0.3s ease-in-out;
+        background-color: #1c1c1c23;
+        backdrop-filter: blur(10px);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.8);
+        padding-top: 60px; /* Leaves space for a close button */
+    }
+
+    /* Class added by JS to open the menu */
+    .sidebar.open {
+        right: 0; 
+    }
+
+    /* Hide the original logo inside the sidebar since it's now in the top header */
+    .sidebar .sidebar-logo {
+        display: none; 
+    }
+    .sidebar #close-button {
+        display: show;
+    }
+
+    /* 4. Make Main Content full width */
+    .main-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* 5. Force 2 Cards Per Row */
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+        gap: 10px; /* Smaller gap to save space */
+    }
+
+    /* 6. Shrink Card Elements so 2 cards fit nicely without breaking */
+    .prod-card {
+        border-radius: 15px;
+    }
+    
+    .prod-card img {
+        height: 120px; /* Smaller image height */
+    }
+    
+    .prod-info {
+        padding: 10px;
+    }
+    
+    .prod-info h3 {
+        font-size: 0.9rem; /* Smaller title */
+        margin-bottom: 5px;
+    }
+    
+    .prod-info p {
+        font-size: 0.7rem; /* Smaller subtitle/size info */
+    }
+    
+    .prod-info .price {
+        font-size: 0.9rem;
+    }
+    
+    .prod-btn {
+        padding: 6px;
+        font-size: 0.8rem;
+        margin-top: 8px;
+    }
+
+    /* Shrink page title */
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+    /* Show and style the close button on mobile */
+    .close-btn {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 2rem;
+        color: #D4AE37;
+        cursor: pointer;
+        z-index: 2001;
+        transition: transform 0.3s;
+    }
+
+    .close-btn:hover {
+        transform: scale(1.1);
+        color: white;
+    }
+    /* Add this inside @media (max-width: 425px) at the bottom */
+    
     .modal-info {
         padding: 20px;
     }
 
     #modal-title {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Smaller title */
+    }
+
+    #modal-price {
+        font-size: 1.4rem; /* Smaller price */
+    }
+
+    .buy-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 }

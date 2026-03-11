@@ -4,6 +4,9 @@
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
 }
+#mobile-menu-btn {
+    display: none;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -542,49 +545,124 @@ body {
 /* mobile  */
 
 
+
+
+/* --- MOBILE RESPONSIVE (Max-width: 768px) --- */
 @media (max-width: 768px) {
 
+    /* 1. NAVBAR: Logo Left, Hamburger Right */
     .navbar {
         height: auto;
-        flex-direction: column;
-        padding: 15px;
+        flex-direction: row; /* Keeps items side-by-side */
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
         border-radius: 30px;
-    }
-    .navbar ul {
-        padding: 0;
-        text-align: center;
-    }
-    .navbar li {
-        display: block;
-        padding: 10px 0;
+        position: relative;
     }
 
+    #mobile-menu-btn {
+        display: block;
+        font-size: 1.8rem;
+        color: #D4AE37;
+        cursor: pointer;
+        position: static; /* Removes absolute positioning so it aligns perfectly */
+        z-index: 1001; /* Keeps it above the sidebar */
+    }
+
+    /* 2. SIDEBAR MENU: Slides from the Right */
+    #nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden completely to the right */
+        width: 250px;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.17);
+        backdrop-filter: blur(10px); /* Dark background to match theme */
+        padding-top: 80px;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.8);
+        transition: right 0.5s ease-in-out;
+        z-index: 1000;
+        text-align: center;
+    }
+
+    /* JavaScript adds this class to slide it in */
+    #nav-links.active {
+        right: 0; 
+        background-color: rgba(255, 255, 255, 0.17);
+        backdrop-filter: blur(10px);
+        /* transition: s; */
+    }
+
+    .navbar li {
+        padding: 20px 0;
+        display: block;
+        justify-items: center;
+    }
+
+    .navbar li a {
+        color: black; /* Make text white so it's readable on dark sidebar */
+    }
+
+    /* 3. CATALOG: 2 Cards per Row */
     .catlog {
         height: auto; 
         padding-bottom: 50px;
     }
+    
     .furniture, .interior {
         height: auto;
     }
+
     .container {
-        flex-direction: column; 
-        height: auto;
+        display: grid; /* Switch from Flex to Grid to control columns */
+        grid-template-columns: repeat(2, 1fr); /* Forces 2 equal columns */
+        gap: 15px;
         padding: 0 15px;
+        height: auto; /* Allow it to grow */
     }
+
     .box {
-        margin-bottom: 20px;
-        min-height: 400px; 
-        border-radius: 30px !important; 
+        margin-bottom: 0;
+        min-height: auto; 
+        border-radius: 20px !important; /* Slightly smaller radius for small screens */
     }
     
     .box img {
-        border-radius: 30px 30px 0 0 !important; 
+        height: 150px; /* Limits image height so 2 cards fit nicely */
+        border-radius: 20px 20px 0 0 !important; 
     }
 
+    .desc h2 { font-size: 1.2rem; }
+    .desc p { font-size: 0.8rem; }
+
+    /* --- REST OF YOUR MOBILE STYLES --- */
+    .hero img, .hero2 img {
+        height: 50vh;
+    }
+
+    .text, .txt {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: 1rem;
+        color: white;
+        text-align: center; /* Center align hero text on mobile */
+    }
+
+    .text h1, .txt h1 {
+        font-size: 2rem;
+        color: white;
+    }
 
     .about {
         height: auto;
     }
+
     .about img {
         height: 40vh;
         margin-bottom: 70px;
@@ -592,52 +670,38 @@ body {
 
     .abtus {
         position: static; 
-        width: 100%;
+        width: 90%;
         background-color: white; 
         padding: 20px;
         margin-top: -50px; 
         border-radius: 30px;
         z-index: 2;
-        position: relative;
-        margin-left: 12px;
-    }
-    .abtus h2, .abtus h3, .abtus p {
-        text-align: center; 
+        margin: -50px auto 0 auto; /* Center the about box */
     }
 
-    
+    .abtus h2, .abtus h3, .abtus p {
+        text-align: center; 
+        font-size: .8em
+        ;
+    }
+
     .contact {
         height: auto;
     }
+
     .contact-container {
-        flex-direction: column;
-    }
-    .contact-box {
-        margin-right: 0;
-        border-radius: 30px 30px 0 0; 
-    }
-    .info {
-        margin-left: 0;
-        border-radius: 0 0 30px 30px; 
+        flex-direction: row;
+        gap: 20px;
     }
 
-    
-    .footerr {
-        height: auto;
-        padding-bottom: 20px;
+    .contact-box {
+        margin-right: 0;
+        border-radius: 0 50px 50px 0; 
     }
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
-    }
-    .footheading {
-        padding: 10px;
-    }
+
     .info {
         margin-left: 0;
-        border-radius: 0 0 30px 30px;
-        
+        border-radius: 50px 0 0 50px; 
         text-align: center;
         display: flex;
         flex-direction: column;  
@@ -645,15 +709,182 @@ body {
         padding-bottom: 30px;    
     }
 
+    .footerr {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .footer-grid {
+        /* grid-template-rows: 1fr; */
+        grid-auto-flow: row;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footheading {
+        padding: 10px;
+        padding-top: 30px;
+    }
+
     .icons {
         justify-content: center; 
         width: 100%;
     }
-    .icons a{
-        font-size: 1em;
-        transition: transform 0.3s;
+    .info-text h3 {
+        font-size: 1.2;
     }
-    .icons a:hover{
-        transform: scale(1.2);
+    .info-text p {
+        font-size: 1em;
+    }
+    .footheading h3 {
+        font-size: 1.5rem;
+    }
+    .footheading p {
+        font-size: 1rem;
+    }
+    #icns a {
+        display: none;
+    }   
+
+}
+
+/* Responsive Mobile */
+
+
+/* --- EXTRA MOBILE RESPONSIVE (Max-width: 425px) --- */
+@media (max-width: 425px) {
+    * {
+        width: 100%;
+    }
+    /* 1. UPGRADE THE SLIDE-OUT SIDEBAR FOR TINY PHONES */
+    #nav-links {
+        width: 60%; /* Takes up 75% of the screen instead of a fixed 250px */
+        background-color: #111; /* Solid dark background for better readability */
+        border-left: 2px solid #D4AE37; /* Adds a premium gold border on the left edge */
+    }
+
+    .navbar li a {
+        font-size: 1.2rem; /* Slightly smaller text for small screens */
+        border: 1px solid black;
+        border-radius: 20px 0px 0px 20px;
+        
+    }
+    
+    /* 2. CATALOG: 1 Column (Looks much better than 2 squished cards) */
+    .container {
+        grid-template-columns: 1fr; /* Stacks the cards 1 by 1 */
+        padding: 0 10px;
+    }
+
+    .box img {
+        height: 220px; /* Makes the image taller and more beautiful */
+        border-radius: 20px 20px 0 0 !important; 
+    }
+
+    /* 3. HERO SECTIONS: Adjust padding for tiny screens */
+    .text h1, .txt h1 {
+        font-size: 1.6rem; /* Prevent huge text from breaking the screen */
+    }
+    
+    .text, .txt {
+        padding: 1rem;
+    }
+
+    /* 4. MAKE THE FOOTER ATTRACTIVE & PREMIUM */
+    .footerr {
+        background-color: #111; /* Slightly different black to stand out */
+        padding-top: 30px;
+    }
+
+    .footer-grid {
+        text-align: left; /* Left-aligned text looks much more professional on phones */
+        padding: 0 20px;
+        gap: 0; /* Remove default grid gap so we can control it with borders */
+    }
+
+    .footheading {
+        padding: 20px 0;
+        border-bottom: 1px solid #333; /* Adds an elegant separator line between sections */
+    }
+
+    /* Remove the bottom line from the last section */
+    .footheading:last-child {
+        border-bottom: none;
+    }
+
+    .footheading h3 {
+        color: #D4AE37; /* Gold headings */
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .footheading p, .fh a {
+        font-size: 0.95rem;
+        color: #bbb; /* Softer gray for text */
+        line-height: 1.8; /* More breathing room between lines */
+    }
+
+    /* Align icons beautifully to the left */
+    .icons {
+        justify-content: flex-start; 
+        gap: 25px;
+        margin-top: 15px;
+    }
+
+    .icons a {
+        color: #D4AE37; /* Gold icons */
+    }
+
+    /* Make the bottom copyright bar darker */
+    .copy {
+        background-color: #050505;
+        font-size: 0.8rem;
+        padding: 15px;
+        margin-top: 0;
+        color: #777;
+    }
+    .contact-container{
+        flex-direction: column;
+    }
+    .contact-box{
+        width: 100%;
+        border-radius: 50px;
+
+    }
+    .info{
+        width: 100%;
+        border-radius: 50px;
+    }
+    .icons{
+        display: none;
+    }
+    .footerr h3{
+        font-size: .8em;
+    }
+    .footerr {
+        font-size: 1em;
+        padding: 0px;
+    }
+    .footheading a{
+        font-size: 1em;
+    }
+    .footheading p{
+        font-size: .7em;
+    }
+    .copy {
+        padding: 5px;
+    }
+    .footheading{
+        padding: 5px;
+    }
+    #icns.fh{
+        display: none;
+    }
+    .contact-box form button{
+        width: 100px;
+        height: 30px;
+        font-size: 10px;
     }
 }
