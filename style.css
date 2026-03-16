@@ -4,9 +4,11 @@
     font-family: "Roboto", sans-serif;
     box-sizing: border-box;
 }
+
 #mobile-menu-btn {
     display: none;
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -46,17 +48,18 @@ body {
     padding-right: 4rem;
     padding-top: 10px;
 }
+
 .navbar li a {
     text-decoration: none;
     color: black;
     font-size: 20px;
-    
-    display: inline-block;       
-    transition: transform 0.3s;  
+
+    display: inline-block;
+    transition: transform 0.3s;
 }
 
 .navbar li a:hover {
-    
+
     transform: scale(1.2);
     color: #D4AE37;
     text-shadow: 2px 2px 10px #D4AE37;
@@ -108,32 +111,13 @@ body {
     cursor: pointer;
     transition: transform 0.3s;
 }
-.text button:hover{
+
+.text button:hover {
     transform: scale(1.1);
     box-shadow: 2px 2px 8px white;
     border: 1px solid white;
 }
 
-
-@media (max-width: 768px) {
-
-    .hero img {
-        height: 50vh;
-    }
-
-    .text {
-        position: static;
-        transform: none;
-        width: 100%;
-        margin-top: 1rem;
-        color: white;
-    }
-
-    .text h1 {
-        font-size: 1.8rem;
-        color: white;
-    }
-}
 
 .hero2 {
     margin-top: 15px;
@@ -171,25 +155,6 @@ body {
     text-align: center;
 }
 
-@media (max-width: 768px) {
-
-    .hero2 img {
-        height: 50vh;
-    }
-
-    .txt {
-        position: static;
-        transform: none;
-        width: 100%;
-        margin-top: 1rem;
-        color: white;
-    }
-
-    .txt h1 {
-        font-size: 1.8rem;
-        color: white;
-    }
-}
 
 .catlog {
     margin-top: 20px;
@@ -201,17 +166,14 @@ body {
 }
 
 .furniture {
-    /* border: 1px solid black; */
-    /* margin: 0px 30px; */
     width: 100%;
     height: auto;
-    margin-top: 30px;
 }
 
 .hding {
 
     text-align: center;
-    margin: 10px auto;
+    margin: 20px auto;
     border: 1px solid white;
     width: 150px;
     height: 40px;
@@ -222,9 +184,7 @@ body {
     color: white;
 }
 
-.interior {
-    margin-top: 30px;
-}
+
 
 .container {
     max-width: 95%;
@@ -269,10 +229,12 @@ body {
     font-size: 14px;
     font-weight: 300;
 }
-.one{
+
+.one {
     text-decoration: none;
     color: white;
 }
+
 .two {
     border-radius: 0px;
     text-decoration: none;
@@ -290,7 +252,8 @@ body {
     text-decoration: none;
     color: white;
 }
-.box:hover{
+
+.box:hover {
     transform: scale(1.02);
     border: 1px solid #D4AE37;
     box-shadow: 0px 2px 10px #d4ad37a7;
@@ -329,15 +292,12 @@ body {
 
 .abtus h3 {
     margin-top: 20px;
-    font-size: 6.7vh;
+    font-size: 4vh;
     font-weight: 400;
     text-align: right;
 }
-@media (max-width: 768px) {
-    .abtus h3{
-        font-size: 1.8rem;
-    }
-}
+
+
 .abtus p {
     margin-top: 20px;
     text-align: right;
@@ -412,16 +372,20 @@ body {
     background-color: #1C1C1C;
 
 }
-.contact-box form input[type="text"]{
+
+.contact-box form input[type="text"] {
     color: white;
 }
-.contact-box form input[type="email"]{
+
+.contact-box form input[type="email"] {
     color: white;
 }
-.contact-box form input[type="tel"]{
+
+.contact-box form input[type="tel"] {
     color: white;
 }
-.contact-box form textarea{
+
+.contact-box form textarea {
     color: white;
 }
 
@@ -444,13 +408,15 @@ body {
     margin: 10px 0px 0px 0px;
     transition: transform 0.3s;
 }
-.contact-box form button:hover{
+
+.contact-box form button:hover {
     transform: scale(1.05);
     background-color: white;
     color: black;
     border: 1px solid #D4AE37;
     box-shadow: 2px 2px 8px #D4AE37;
 }
+
 .info {
     margin-left: 10px;
     flex: 2.7;
@@ -475,6 +441,7 @@ body {
 .info-text p {
     margin: 0px;
 }
+
 /* Icons  */
 .icons {
     margin-top: 20px;
@@ -483,6 +450,7 @@ body {
     /* gap: 1.3em; */
     justify-content: space-around;
 }
+
 .icons a {
     color: #1C1C1C;
     text-decoration: none;
@@ -490,7 +458,8 @@ body {
     display: inline-block;
     transition: transform 0.3s;
 }
-.icons a:hover{
+
+.icons a:hover {
     transform: scale(1.2);
     text-shadow: 2px 0px 10px #b69532;
 }
@@ -504,31 +473,38 @@ body {
     color: white;
     padding-bottom: 10px;
 }
+
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
 }
+
 .footheading {
     padding: 30px 30px 0px 40px;
     text-align: center;
+    margin-top: 15px;
 }
+
 .footheading h3 {
     font-size: 1.8em;
     font-weight: 380;
 }
+
 .footheading p {
     font-weight: 300;
 }
+
 /* Our services  */
 
-.fh a{
+.fh a {
     text-decoration: none;
     color: white;
     transition: transform 0.3s;
     display: inline-block;
 }
-.fh a:hover{
+
+.fh a:hover {
     transform: scale(1.2);
     color: #D4AE37;
 }
@@ -553,7 +529,8 @@ body {
     /* 1. NAVBAR: Logo Left, Hamburger Right */
     .navbar {
         height: auto;
-        flex-direction: row; /* Keeps items side-by-side */
+        flex-direction: row;
+        /* Keeps items side-by-side */
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
@@ -566,8 +543,10 @@ body {
         font-size: 1.8rem;
         color: #D4AE37;
         cursor: pointer;
-        position: static; /* Removes absolute positioning so it aligns perfectly */
-        z-index: 1001; /* Keeps it above the sidebar */
+        position: static;
+        /* Removes absolute positioning so it aligns perfectly */
+        z-index: 1001;
+        /* Keeps it above the sidebar */
     }
 
     /* 2. SIDEBAR MENU: Slides from the Right */
@@ -576,15 +555,17 @@ body {
         flex-direction: column;
         position: fixed;
         top: 0;
-        right: -100%; /* Hidden completely to the right */
+        right: -100%;
+        /* Hidden completely to the right */
         width: 250px;
         height: 100vh;
         background-color: rgba(255, 255, 255, 0.17);
-        backdrop-filter: blur(10px); /* Dark background to match theme */
+        backdrop-filter: blur(10px);
+        /* Dark background to match theme */
         padding-top: 80px;
         margin: 0;
         border-radius: 0;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.8);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.8);
         transition: right 0.5s ease-in-out;
         z-index: 1000;
         text-align: center;
@@ -592,7 +573,7 @@ body {
 
     /* JavaScript adds this class to slide it in */
     #nav-links.active {
-        right: 0; 
+        right: 0;
         background-color: rgba(255, 255, 255, 0.17);
         backdrop-filter: blur(10px);
         /* transition: s; */
@@ -605,56 +586,72 @@ body {
     }
 
     .navbar li a {
-        color: black; /* Make text white so it's readable on dark sidebar */
+        color: black;
+        /* Make text white so it's readable on dark sidebar */
     }
 
     /* 3. CATALOG: 2 Cards per Row */
     .catlog {
-        height: auto; 
+        height: auto;
         padding-bottom: 50px;
     }
-    
-    .furniture, .interior {
+
+    .furniture,
+    .interior {
         height: auto;
     }
 
     .container {
-        display: grid; /* Switch from Flex to Grid to control columns */
-        grid-template-columns: repeat(2, 1fr); /* Forces 2 equal columns */
+        display: grid;
+        /* Switch from Flex to Grid to control columns */
+        grid-template-columns: repeat(2, 1fr);
+        /* Forces 2 equal columns */
         gap: 15px;
         padding: 0 15px;
-        height: auto; /* Allow it to grow */
+        height: auto;
+        /* Allow it to grow */
     }
 
     .box {
         margin-bottom: 0;
-        min-height: auto; 
-        border-radius: 20px !important; /* Slightly smaller radius for small screens */
-    }
-    
-    .box img {
-        height: 150px; /* Limits image height so 2 cards fit nicely */
-        border-radius: 20px 20px 0 0 !important; 
+        min-height: auto;
+        border-radius: 20px !important;
+        /* Slightly smaller radius for small screens */
     }
 
-    .desc h2 { font-size: 1.2rem; }
-    .desc p { font-size: 0.8rem; }
+    .box img {
+        height: 150px;
+        /* Limits image height so 2 cards fit nicely */
+        border-radius: 20px 20px 0 0 !important;
+    }
+
+    .desc h2 {
+        font-size: 1.2rem;
+    }
+
+    .desc p {
+        font-size: 0.8rem;
+    }
 
     /* --- REST OF YOUR MOBILE STYLES --- */
-    .hero img, .hero2 img {
+    .hero img,
+    .hero2 img {
         height: 50vh;
     }
 
-    .text, .txt {
+    .text,
+    .txt {
         position: static;
         transform: none;
         width: 100%;
         margin-top: 1rem;
         color: white;
-        text-align: center; /* Center align hero text on mobile */
+        text-align: center;
+        /* Center align hero text on mobile */
     }
 
-    .text h1, .txt h1 {
+    .text h1,
+    .txt h1 {
         font-size: 2rem;
         color: white;
     }
@@ -669,20 +666,21 @@ body {
     }
 
     .abtus {
-        position: static; 
+        position: static;
         width: 90%;
-        background-color: white; 
         padding: 20px;
-        margin-top: -50px; 
+        margin-top: -50px;
         border-radius: 30px;
         z-index: 2;
-        margin: -50px auto 0 auto; /* Center the about box */
+        margin: -50px auto 0 auto;
+        /* Center the about box */
     }
 
-    .abtus h2, .abtus h3, .abtus p {
-        text-align: center; 
-        font-size: .8em
-        ;
+    .abtus h2,
+    .abtus h3,
+    .abtus p {
+        text-align: center;
+        font-size: .8em;
     }
 
     .contact {
@@ -696,17 +694,17 @@ body {
 
     .contact-box {
         margin-right: 0;
-        border-radius: 0 50px 50px 0; 
+        border-radius: 0 50px 50px 0;
     }
 
     .info {
         margin-left: 0;
-        border-radius: 50px 0 0 50px; 
+        border-radius: 50px 0 0 50px;
         text-align: center;
         display: flex;
-        flex-direction: column;  
-        align-items: center;     
-        padding-bottom: 30px;    
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 30px;
     }
 
     .footerr {
@@ -715,7 +713,6 @@ body {
     }
 
     .footer-grid {
-        /* grid-template-rows: 1fr; */
         grid-auto-flow: row;
         text-align: center;
         gap: 10px;
@@ -727,24 +724,29 @@ body {
     }
 
     .icons {
-        justify-content: center; 
+        justify-content: center;
         width: 100%;
     }
+
     .info-text h3 {
         font-size: 1.2;
     }
+
     .info-text p {
         font-size: 1em;
     }
+
     .footheading h3 {
         font-size: 1.5rem;
     }
+
     .footheading p {
         font-size: 1rem;
     }
+
     #icns a {
         display: none;
-    }   
+    }
 
 }
 
@@ -752,59 +754,212 @@ body {
 
 
 /* --- EXTRA MOBILE RESPONSIVE (Max-width: 425px) --- */
-@media (max-width: 425px) {
+@media (max-width: 450px) {
     * {
         width: 100%;
     }
+
     /* 1. UPGRADE THE SLIDE-OUT SIDEBAR FOR TINY PHONES */
     #nav-links {
-        width: 60%; /* Takes up 75% of the screen instead of a fixed 250px */
-        background-color: #111; /* Solid dark background for better readability */
-        border-left: 2px solid #D4AE37; /* Adds a premium gold border on the left edge */
+        width: 40%;
+        /* Takes up 75% of the screen instead of a fixed 250px */
+        background-color: #111;
+        /* Solid dark background for better readability */
+        border-left: 2px solid #D4AE37;
+        /* Adds a premium gold border on the left edge */
+    }
+
+    .navbar {
+        height: 60px;
+    }
+
+    .navbar .logo {
+        width: 20%;
     }
 
     .navbar li a {
-        font-size: 1.2rem; /* Slightly smaller text for small screens */
+        font-size: 1.2rem;
+        /* Slightly smaller text for small screens */
         border: 1px solid black;
         border-radius: 20px 0px 0px 20px;
-        
+
     }
-    
+
+
+    /* hero section  */
+
+
+    .hero {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 40px 40px 0 0;
+    }
+
+    .hero img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center bottom;
+        display: block;
+        border-radius: 40px 40px 0 0;
+    }
+
+    .text {
+        position: absolute;
+        top: 27%;
+        transform: translateY(-50%);
+        width: 88%;
+        background: rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(2px);
+        padding: 2rem;
+    }
+
+    .text h1 {
+        font-size: 2rem;
+        font-weight: 400;
+        color: black;
+    }
+
+    .text p {
+        font-size: .8rem;
+        color: black;
+    }
+
+    /* HERO SECTION 2  */
+
+
+    .hero2 {
+        margin-top: 15px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 0 0 40px 40px;
+    }
+
+    .hero2 img {
+        width: 100%;
+        border-radius: 0 0 40px 40px;
+        object-fit: cover;
+        object-position: center bottom;
+        display: block;
+    }
+
+    .txt {
+        position: absolute;
+        top: 10%;
+        left: 2%;
+        width: 80%;
+        padding: 2rem;
+    }
+
+    .txt h1 {
+        font-size: 2rem;
+        font-weight: 400;
+        text-align: left;
+        color: black;
+    }
+
+    .txt p {
+        margin-top: 15px;
+        font-size: 0.8rem;
+        text-align: left;
+        color: black;
+    }
+
+
+    /* ABOUT US  */
+
+    .about {
+        margin: 0 auto;
+        width: 96%;
+        position: relative;
+        overflow: hidden;
+
+
+    }
+
+    .about img {
+        border-radius: 25px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center bottom;
+        display: block;
+
+    }
+
+    .abtus {
+        position: absolute;
+        top: 12%;
+        padding: 2rem;
+        padding-right: 1rem;
+    }
+
+    .abtus h2 {
+        text-align: right;
+        font-size: 1.2em;
+        font-weight: 400;
+    }
+
+    .abtus h3 {
+        margin-top: 20px;
+        font-size: 3vh;
+        font-weight: 400;
+        text-align: right;
+    }
+
+
+    .abtus p {
+        margin-top: 20px;
+        text-align: right;
+        color: black;
+    }
+
     /* 2. CATALOG: 1 Column (Looks much better than 2 squished cards) */
     .container {
-        grid-template-columns: 1fr; /* Stacks the cards 1 by 1 */
+        grid-template-columns: repeat(2, 1fr);
+        /* Stacks the cards 1 by 1 */
         padding: 0 10px;
     }
 
     .box img {
-        height: 220px; /* Makes the image taller and more beautiful */
-        border-radius: 20px 20px 0 0 !important; 
+        height: 220px;
+        /* Makes the image taller and more beautiful */
+        border-radius: 20px 20px 0 0 !important;
     }
 
-    /* 3. HERO SECTIONS: Adjust padding for tiny screens */
-    .text h1, .txt h1 {
-        font-size: 1.6rem; /* Prevent huge text from breaking the screen */
-    }
-    
-    .text, .txt {
+    .text,
+    .txt {
         padding: 1rem;
+    }
+
+    .text button {
+        display: none;
     }
 
     /* 4. MAKE THE FOOTER ATTRACTIVE & PREMIUM */
     .footerr {
-        background-color: #111; /* Slightly different black to stand out */
+        background-color: #111;
+        /* Slightly different black to stand out */
         padding-top: 30px;
     }
 
     .footer-grid {
-        text-align: left; /* Left-aligned text looks much more professional on phones */
+        text-align: left;
+        /* Left-aligned text looks much more professional on phones */
         padding: 0 20px;
-        gap: 0; /* Remove default grid gap so we can control it with borders */
+        gap: 0;
+        /* Remove default grid gap so we can control it with borders */
     }
+    .footer-grid {
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-gap: 20px;
+}
 
     .footheading {
         padding: 20px 0;
-        border-bottom: 1px solid #333; /* Adds an elegant separator line between sections */
+        border-bottom: 1px solid #333;
+        /* Adds an elegant separator line between sections */
     }
 
     /* Remove the bottom line from the last section */
@@ -813,28 +968,33 @@ body {
     }
 
     .footheading h3 {
-        color: #D4AE37; /* Gold headings */
+        color: #D4AE37;
+        /* Gold headings */
         font-size: 1.3rem;
         margin-bottom: 12px;
         text-transform: uppercase;
         letter-spacing: 1px;
     }
 
-    .footheading p, .fh a {
+    .footheading p,
+    .fh a {
         font-size: 0.95rem;
-        color: #bbb; /* Softer gray for text */
-        line-height: 1.8; /* More breathing room between lines */
+        color: #bbb;
+        /* Softer gray for text */
+        line-height: 1.8;
+        /* More breathing room between lines */
     }
 
     /* Align icons beautifully to the left */
     .icons {
-        justify-content: flex-start; 
+        justify-content: flex-start;
         gap: 25px;
         margin-top: 15px;
     }
 
     .icons a {
-        color: #D4AE37; /* Gold icons */
+        color: #D4AE37;
+        /* Gold icons */
     }
 
     /* Make the bottom copyright bar darker */
@@ -845,46 +1005,69 @@ body {
         margin-top: 0;
         color: #777;
     }
-    .contact-container{
+
+    .contact-container {
         flex-direction: column;
     }
-    .contact-box{
+
+    .contact-box {
         width: 100%;
         border-radius: 50px;
 
     }
-    .info{
-        width: 100%;
-        border-radius: 50px;
+
+    .contact h2 {
+        margin-top: 24px;
     }
-    .icons{
+
+    .info {
         display: none;
     }
-    .footerr h3{
+
+    .icons {
+        display: none;
+    }
+
+    .footerr h3 {
         font-size: .8em;
     }
+
     .footerr {
         font-size: 1em;
         padding: 0px;
     }
-    .footheading a{
+
+    .footheading a {
         font-size: 1em;
     }
-    .footheading p{
+
+    .footheading p {
         font-size: .7em;
     }
+
     .copy {
         padding: 5px;
     }
-    .footheading{
+
+    .footheading {
         padding: 5px;
     }
-    #icns.fh{
+
+    #icns.fh {
         display: none;
     }
-    .contact-box form button{
+
+    .contact-box form button {
         width: 100px;
         height: 30px;
         font-size: 10px;
+    }
+
+    .catlog {
+        padding-bottom: 25px;
+    }
+
+    .about .im {
+        margin-bottom: 0px;
     }
 }

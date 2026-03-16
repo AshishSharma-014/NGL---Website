@@ -499,7 +499,7 @@ input[type="number"]::placeholder {
 /* On very small phones, side-by-side becomes too tight. 
    This stacks them, putting the sidebar/filters at the top */
 /* --- MOBILE RESPONSIVE (Max-width: 425px) --- */
-@media (max-width: 425px) {
+@media (max-width: 450px) {
     /* 1. Reset Body Layout */
     body {
         display: block; /* Disables the side-by-side flex layout from the 768px query */

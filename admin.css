@@ -359,7 +359,7 @@ textarea:focus {
 }
 
 /* --- MOBILE RESPONSIVE (Max-width: 425px) --- */
-@media (max-width: 425px) {
+@media (max-width: 450px) {
     /* Change body/panel layout to stack vertically */
     body {
         overflow-y: auto;
